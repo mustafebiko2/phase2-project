@@ -10,7 +10,7 @@ function AnimeItem() {
     const [characters, setCharacters] = React.useState([])
     const [showMore, setShowMore] = React.useState(false)
 
-    //destructure anime
+    
     const {
         title, synopsis, 
         trailer,duration,aired, 
@@ -18,7 +18,7 @@ function AnimeItem() {
         score,scored_by, popularity, 
         status, rating, source } = anime
 
-    //get anime based on id
+
     const getAnime = async (anime) => {
         const response = await fetch(`https://api.jikan.moe/v4/anime/${anime}`)
         const data = await response.json()
