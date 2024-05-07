@@ -5,7 +5,7 @@ import styled from 'styled-components'
 function AnimeItem() {
     const {id} = useParams()
 
-    //state
+    
     const [anime, setAnime] = React.useState({})
     const [characters, setCharacters] = React.useState([])
     const [showMore, setShowMore] = React.useState(false)
@@ -25,7 +25,7 @@ function AnimeItem() {
         setAnime(data.data)
     }
 
-    //get characters
+    
     const getCharacters = async (anime) => {
         const response = await fetch(`https://api.jikan.moe/v4/anime/${anime}/characters`)
         const data = await response.json()
@@ -34,7 +34,7 @@ function AnimeItem() {
     }
 
 
-    //initial render
+
     useEffect(() => {
         getAnime(id)
         getCharacters(id)
